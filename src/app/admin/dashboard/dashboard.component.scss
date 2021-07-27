@@ -1,0 +1,93 @@
+@import "../../../assets/1.3.0/css/line-awesome.min.css";
+
+
+.example-card {
+  max-width: 970px;
+  max-height: 200px;
+  margin-left: 20px;
+  margin-top: 50px;
+  box-shadow: 11px 11px 48px rgba(0,0,0,0.5);
+}
+
+nav {
+  margin-top: -15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.cards {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-single {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 2px;
+  color: #222;
+  box-shadow: 11px 11px 48px rgba(0,0,0,0.5);
+}
+
+.card-single div:last-child span {
+  font-size: 3rem;
+  color: #1f8fc3;
+}
+
+.card-single div:first-child span {
+  color: #8398A2;
+}
+
+.card-single:last-child {
+  background: #1f8fc3;
+}
+
+.card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span {
+  color: #fff;
+}
+
+.recent-grid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 65% auto;
+}
+
+.card {
+  background: #fff;
+}
+
+.card-header {
+  padding: 1rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  color: #222;
+}
+
+.card-header button {
+  background: #1f8fc3;
+  border-radius: 10px;
+  color: #fff;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+  border: 1px solid #1f8fc3;
+}

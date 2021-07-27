@@ -1,0 +1,128 @@
+
+<div class="wrappers">
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a routerLink="/dashboard" class="brand-link">
+      <img src="../assets/images/IMG_20180619_155949.jpg" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Sage</span>
+    </a>
+      
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../assets/images/IMG_20180619_155949.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Walter Sagonda</a>
+        </div>
+      </div>
+      
+    <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+              with font-awesome or any other icon font library -->
+                  
+          <!--Dashboard-->
+          <li class="nav-item">
+            <a routerLink="/dashboard" class="nav-link" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+                <i class="right fas"></i>
+              </p>
+            </a>
+          </li>
+          <!--End Dashboard-->
+                  
+          <!--Events-->
+          <li class="nav-item">
+            <a routerLink="/events" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Events
+              </p>
+            </a>
+          </li>
+
+          <!--Projects-->
+          <li class="nav-item">
+            <a routerLink="/projects" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-clipboard"></i>
+              <p>
+                Projects
+              </p>
+            </a>
+          </li>
+
+          <!--Timeline-->
+          <li class="nav-item">
+            <a routerLink="/timeline" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-retweet"></i>
+              <p>
+                Timeline
+              </p>
+            </a>
+          </li>
+
+          <!--Team-Members-->
+          <li class="nav-item">
+            <a routerLink="/team-members" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Team Members
+              </p>
+            </a>
+          </li>
+
+          <!--Tasks-->
+          <li class="nav-item">
+            <a routerLink="/tasks" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Tasks
+              </p>
+            </a>
+          </li>
+
+          <!--Finance-->
+          <li class="nav-item">
+            <a routerLink="/finance" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p>
+                Finance
+                
+              </p>
+            </a>
+          </li>
+                  
+          <!--Clients-->
+          <li class="nav-item">
+            <a routerLink="/clients" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Clients
+              </p>
+            </a>
+          </li>
+
+          <!--Messages-->
+          <li class="nav-item">
+            <a routerLink="/messages" class="nav-link" routerLinkActive="link-active">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Messages
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+</div>
+

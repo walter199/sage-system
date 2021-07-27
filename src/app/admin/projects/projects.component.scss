@@ -1,0 +1,29 @@
+.example-card {
+    width: auto;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    box-shadow: 11px 11px 48px rgba(0,0,0,0.5);
+}
+  
+nav {
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    
+}
+
+.card {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.nav-link {
+    cursor: pointer;
+}
