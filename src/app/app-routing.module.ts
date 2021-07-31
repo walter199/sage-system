@@ -1,3 +1,4 @@
+import { AddProjectComponent } from './admin/projects/add-project/add-project.component';
 import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
 import { InvoiceComponent } from './admin/finance/invoice/invoice.component';
 import { SettingsComponent } from './admin/user/settings/settings.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'invoice', component: InvoiceComponent},
   {path: 'expenses', component: ExpensesComponent},
-  {path: 'clients', component: ClientsComponent}
+  {path: 'clients', component: ClientsComponent},
+  {path: 'add-project', component: AddProjectComponent}
 ];
 
 @NgModule({

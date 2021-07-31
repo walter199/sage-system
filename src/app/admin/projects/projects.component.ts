@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
@@ -16,7 +16,11 @@ export class ProjectsComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(AddProjectComponent)
+    const dialogRef = this.dialog.open(AddProjectComponent)
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog result: $(result)')
+    })
   }
 
   

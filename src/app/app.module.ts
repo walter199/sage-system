@@ -50,7 +50,6 @@ import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
     InvoiceComponent,
     ExpensesComponent
   ],
-  entryComponents: [AddProjectComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
