@@ -11,7 +11,7 @@ export const environment = {
     storageBucket: "sage-system-9ca67.appspot.com",
     messagingSenderId: "547917482367",
     appId: "1:547917482367:web:98bd4ef09d111c9dbff24a"
-  };
+  }
 };
 
 /*

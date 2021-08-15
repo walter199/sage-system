@@ -1,6 +1,14 @@
+import { FirebaseAuthService } from './services/firebase-auth.service';
+import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+//import firebase modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +35,7 @@ import { ProfileComponent } from './admin/user/profile/profile.component';
 import { SettingsComponent } from './admin/user/settings/settings.component';
 import { InvoiceComponent } from './admin/finance/invoice/invoice.component';
 import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
+import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.component';
 
 @NgModule({
   declarations: [
@@ -48,18 +57,23 @@ import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
     ProfileComponent,
     SettingsComponent,
     InvoiceComponent,
-    ExpensesComponent
+    ExpensesComponent,
+    ProjectDocComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     NgbModule,
     MatDialogModule,
     MatCardModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [FirebaseAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<body class="login">
+<body *ngIf="!isSignedIn" class="login">
     <div>
       <div class="login_wrapper">
         <div class="animate form login_form">
@@ -6,13 +6,13 @@
             <form>
               <h1>Login Form</h1>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                <input type="email" class="form-control" placeholder="Email" required="" #email />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" #password />
               </div>
               <div>
-                <a class="btn btn-default submit" href="#">Log in</a>
+                <a class="btn btn-default submit" (click)="onSignin(email.value, password.value)">Login</a>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 

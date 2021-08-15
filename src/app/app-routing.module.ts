@@ -1,3 +1,4 @@
+import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.component';
 import { AddProjectComponent } from './admin/projects/add-project/add-project.component';
 import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
 import { InvoiceComponent } from './admin/finance/invoice/invoice.component';
@@ -18,6 +19,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'events', component: EventsComponent},
   {path: 'finance', component: FinanceComponent},
@@ -26,14 +28,15 @@ const routes: Routes = [
   {path: 'team-members', component: TeamMembersComponent},
   {path: 'timeline', component: TimelineComponent},
   {path: 'messages', component: MessagesComponent},
-  {path: 'login', component: LogInComponent},
-  {path: 'register', component: RegisterComponent},
+  //{path: 'login', component: LogInComponent},
+  //{path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'invoice', component: InvoiceComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'clients', component: ClientsComponent},
-  {path: 'add-project', component: AddProjectComponent}
+  {path: 'add-project', component: AddProjectComponent},
+  {path: 'project-doc', component: ProjectDocComponent}
 ];
 
 @NgModule({
