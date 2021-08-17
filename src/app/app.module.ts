@@ -3,7 +3,7 @@ import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //import firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -71,7 +71,8 @@ import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.co
     NgbModule,
     MatDialogModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [FirebaseAuthService],
   bootstrap: [AppComponent]

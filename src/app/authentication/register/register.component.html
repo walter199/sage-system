@@ -3,7 +3,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form [formGroup]="registerForm">
                 <h1>Create Account</h1>
                 <div>
                   <input type="text" class="form-control" placeholder="First Name" required="" />
@@ -15,10 +15,10 @@
                   <input type="text" class="form-control" placeholder="Company Name" required="" />
                 </div>
                 <div>
-                  <input type="email" class="form-control" placeholder="Email" required="" #emailSignup />
+                  <input type="email" class="form-control" formControlName="email" placeholder="Email" required="" #emailSignup />
                 </div>
                 <div>
-                  <input type="password" class="form-control" placeholder="Password" required="" #passwordSignup />
+                  <input type="password" class="form-control" formControlName="password" placeholder="Password" required="" #passwordSignup />
                 </div>
                 <div>
                     <input type="password" class="form-control" placeholder="Confirm Password" required="" />
