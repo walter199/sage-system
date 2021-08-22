@@ -1,5 +1,5 @@
 import { AddTaskComponent } from './add-task/add-task.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
+  dialogRef!: MatDialogRef <any> 
 
   constructor(public dialog: MatDialog) { }
 
@@ -15,6 +16,11 @@ export class TasksComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(AddTaskComponent);
+    this.dialogRef = this.dialog.open(AddTaskComponent, {
+        height: '500px',
+        width: '1000px'
+    });
+    
   }
+  
 }

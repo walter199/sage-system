@@ -22,7 +22,7 @@ export class ProjectsComponent implements OnInit {
         width: '1000px'
     });
     
-}
+  }
   
 
 }
