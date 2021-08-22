@@ -8,6 +8,18 @@
         <a routerLink="/tasks" class="nav-link">Tasks</a>
       </li>
     </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+  
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item">
+        <a class="nav-link" (click)="openDialog()">
+          <i class="fas fa-plus-circle"></i>
+          Add Task
+        </a>
+      </li>
+    </ul>
   </nav>
   <mat-card-header>
     

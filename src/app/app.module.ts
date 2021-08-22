@@ -37,6 +37,19 @@ import { InvoiceComponent } from './admin/finance/invoice/invoice.component';
 import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
 import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.component';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddClientComponent } from './admin/clients/add-client/add-client.component';
+import { AddTaskComponent } from './admin/tasks/add-task/add-task.component';
+import { AddMemberComponent } from './admin/team-members/add-member/add-member.component';
+import { AddPaymentComponent } from './admin/finance/add-payment/add-payment.component';
+import { AddExpenseComponent } from './admin/finance/expenses/add-expense/add-expense.component';
+import { AddInvoiceComponent } from './admin/finance/invoice/add-invoice/add-invoice.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +71,13 @@ import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.co
     SettingsComponent,
     InvoiceComponent,
     ExpensesComponent,
-    ProjectDocComponent
+    ProjectDocComponent,
+    AddClientComponent,
+    AddTaskComponent,
+    AddMemberComponent,
+    AddPaymentComponent,
+    AddExpenseComponent,
+    AddInvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +91,11 @@ import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.co
     MatDialogModule,
     MatCardModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    CommonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot()
   ],
   providers: [FirebaseAuthService],
   bootstrap: [AppComponent]

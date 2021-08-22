@@ -1,4 +1,7 @@
+import { AddClientComponent } from './add-client/add-client.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddTaskComponent } from '../tasks/add-task/add-task.component';
 
 @Component({
   selector: 'app-clients',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openDialog() {
+    this.dialog.open(AddClientComponent);
+  }
 }

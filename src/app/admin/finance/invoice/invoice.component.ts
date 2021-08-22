@@ -1,4 +1,6 @@
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-invoice',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  openDialog() {
+    this.dialog.open(AddInvoiceComponent);
+  }
 }
+
