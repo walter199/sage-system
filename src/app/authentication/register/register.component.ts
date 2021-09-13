@@ -9,16 +9,20 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  registerForm!: FormGroup
+  regForm!: FormGroup
 
   isSignedIn = false
 
   constructor(private fb: FormBuilder,private firebaseService: FirebaseAuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    this.regForm = this.fb.group({
+      firstName: ['',[Validators.required]],
+      lastName: ['',[Validators.required]],
+      companyName: ['',[Validators.required]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+      password: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]],
+      cpassword: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
     })
 
     if(localStorage.getItem('user')!== null)

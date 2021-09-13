@@ -1,6 +1,85 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+
+<div mat-dialog-content>
+  <section class="content-header">
+    <!-- Main content -->
+    <form class="content" [formGroup]="paymentForm" (ngSubmit)="submitPaymentData()" novalidate>
+      <div class="row">
+        <div>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add Payment</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">ID</label>
+                <input type="number" formControlName="id" id="inputId" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.id.errors && paymentForm.controls.id.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName">Client</label>
+                <input type="text" formControlName="client" id="inputClient" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.client.errors && paymentForm.controls.client.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName">Project</label>
+                <input type="text" formControlName="projectName" id="inputProject" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.projectName.errors && paymentForm.controls.projectName.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Payment date</label>
+                <input type="text" formControlName="date" id="inputBilldate" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.date.errors && paymentForm.controls.date.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPaymentmethod">Payment method</label>
+                <select formControlName="payMethod" id="inputPaymentmethod" class="form-control custom-select" required>
+                  <option selected disabled>Select one</option>
+                  <option>Online</option>
+                  <option>Cash</option>
+                  <option>Credit Card</option>
+                </select>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.payMethod.errors && paymentForm.controls.payMethod.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputProjectLeader">Amount</label>
+                <input type="number" formControlName="amount" id="inputDuedate" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="paymentForm.controls.amount.errors && paymentForm.controls.amount.touched">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a mat-dialog-close class="btn btn-secondary">Cancel</a>
+          <input type="submit" value="Add new Payment" class="btn btn-success float-right">
+        </div>
+      </div>
+    </form>
 

@@ -1,9 +1,17 @@
+import { ExpenseService } from './services/expense.service';
+import { InvoiceService } from './services/invoice.service';
+import { PaymentService } from './services/payment.service';
+import { ClientService } from './services/client.service';
+import { TaskService } from './services/task.service';
+import { TeamService } from './services/team.service';
+import { ProjectService } from './services/project.service';
 import { FirebaseAuthService } from './services/firebase-auth.service';
 import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFormsModule } from 'ng2-validation';
 
 //import firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -87,6 +95,7 @@ import { AddInvoiceComponent } from './admin/finance/invoice/add-invoice/add-inv
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    CustomFormsModule,
     NgbModule,
     MatDialogModule,
     MatCardModule,
@@ -97,7 +106,16 @@ import { AddInvoiceComponent } from './admin/finance/invoice/add-invoice/add-inv
     NgbModalModule,
     FlatpickrModule.forRoot()
   ],
-  providers: [FirebaseAuthService],
+  providers: [
+    FirebaseAuthService,
+    ProjectService,
+    TeamService,
+    TaskService,
+    ClientService,
+    PaymentService,
+    InvoiceService,
+    ExpenseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

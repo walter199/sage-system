@@ -2,7 +2,7 @@
 <div mat-dialog-content>
   <section class="content-header">
     <!-- Main content -->
-    <section class="content">
+    <form class="content" [formGroup]="taskForm" (ngSubmit)="submitTaskData()" novalidate>
       <div class="row">
         <div>
           <div class="card card-primary">
@@ -17,20 +17,62 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Task</label>
-                <input type="text" id="inputName" class="form-control">
+                <label for="inputName">ID</label>
+                <input type="number" id="inputId" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Title</label>
+                <input type="text" formControlName="title" id="inputTitle" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.title.errors && taskForm.controls.title.touched">
+                  Required
+                </div>
+                
               </div>
               <div class="form-group">
                 <label for="inputDescription">Task Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                <textarea  formControlName="description" id="inputDescription" class="form-control" rows="4" required></textarea>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.description.errors && taskForm.controls.description.touched">
+                  Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputClientCompany">Team Member</label>
-                <input type="text" id="inputClientCompany" class="form-control">
+                <label for="inputClientCompany">Deadline</label>
+                <input type="text" formControlName="deadline" id="inputDealine" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.deadline.errors && taskForm.controls.deadline.touched">
+                  Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputProjectLeader">Due</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
+                <label for="inputProjectLeader">Project</label>
+                <input type="text" formControlName="project" id="inputProject" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.project.errors && taskForm.controls.project.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputName">Team Member</label>
+                <input type="text" formControlName="teamMember" id="inputMemberName" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.teamMember.errors && taskForm.controls.teamMember.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Status</label>
+                <select formControlName="status" id="inputStatus" class="form-control custom-select" required>
+                  <option selected disabled>Select one</option>
+                  <option>To do</option>
+                  <option>In Progress</option>
+                  <option>Success</option>
+                </select>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.status.errors && taskForm.controls.status.touched">
+                  Required
+                </div>
               </div>
             </div>
             <!-- /.card-body -->
@@ -44,4 +86,4 @@
           <input type="submit" value="Create new Task" class="btn btn-success float-right">
         </div>
       </div>
-  </section>
+    </form>

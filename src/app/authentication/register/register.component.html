@@ -3,25 +3,49 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form [formGroup]="registerForm">
+            <form [formGroup]="regForm">
                 <h1>Create Account</h1>
                 <div>
-                  <input type="text" class="form-control" placeholder="First Name" required="" />
+                  <input type="text" class="form-control" formControlName="firstName" placeholder="First Name" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="regForm.controls.firstName.errors && regForm.controls.firstName.touched">
+                    Required
+                  </div>
                 </div>
                 <div>
-                  <input type="text" class="form-control" placeholder="Last Name" required="" />
+                  <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="regForm.controls.lastName.errors && regForm.controls.lastName.touched">
+                    Required
+                  </div>
                 </div>
                 <div>
-                  <input type="text" class="form-control" placeholder="Company Name" required="" />
+                  <input type="text" class="form-control" formControlName="companyName" placeholder="Company Name" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="regForm.controls.companyName.errors && regForm.controls.companyName.touched">
+                    Required
+                  </div>
                 </div>
                 <div>
-                  <input type="email" class="form-control" formControlName="email" placeholder="Email" required="" #emailSignup />
+                  <input type="email" class="form-control" formControlName="email" placeholder="Email" #emailSignup required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="regForm.controls.email.errors && regForm.controls.email.touched">
+                    enter email
+                  </div>
                 </div>
                 <div>
-                  <input type="password" class="form-control" formControlName="password" placeholder="Password" required="" #passwordSignup />
+                  <input type="password" class="form-control" formControlName="password" placeholder="Password" #passwordSignup required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="regForm.controls.password.errors && regForm.controls.password.touched">
+                    Required
+                  </div>
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Confirm Password" required="" />
+                    <input type="password" class="form-control" formControlName="cpassword" placeholder="Confirm Password" required>
+                    <!--err-->
+                    <div class="text-danger" *ngIf="regForm.controls.cpassword.errors && regForm.controls.cpassword.touched">
+                      Required
+                    </div>
                   </div>
                 <div>
                   <a class="btn btn-default submit" (click)="onSignup(emailSignup.value, passwordSignup.value)">Register</a>

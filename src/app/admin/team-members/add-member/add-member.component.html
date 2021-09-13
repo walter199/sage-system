@@ -2,12 +2,12 @@
 <div mat-dialog-content>
     <section class="content-header">
       <!-- Main content -->
-      <section class="content">
+      <form [formGroup]="teamForm" class="content" (ngSubmit)="submitTeamData()" novalidate>
         <div class="row">
           <div>
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Task</h3>
+                <h3 class="card-title">Add New Member</h3>
   
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -17,20 +17,56 @@
               </div>
               <div class="card-body">
                 <div class="form-group">
-                  <label for="inputName">Task</label>
-                  <input type="text" id="inputName" class="form-control">
+                  <label for="inputName">Id</label>
+                  <input formControlName="id" type="number" id="inputId" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="teamForm.controls.id.errors && teamForm.controls.id.touched">
+                    Required
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputDescription">Task Description</label>
-                  <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                  <label for="inputClientCompany">Name</label>
+                  <input formControlName="name" type="text" id="inputMemberName" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="teamForm.controls.name.errors && teamForm.controls.name.touched">
+                    Required
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputClientCompany">Team Member</label>
-                  <input type="text" id="inputClientCompany" class="form-control">
+                  <label for="inputClientCompany">Job Title</label>
+                  <input formControlName="jobTitle" type="text" id="inputJobTitle" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="teamForm.controls.jobTitle.errors && teamForm.controls.jobTitle.touched">
+                    Required
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputProjectLeader">Due</label>
-                  <input type="text" id="inputProjectLeader" class="form-control">
+                  <label for="inputClientCompany">Email</label>
+                  <input formControlName="email" type="email" id="inputEmail" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="teamForm.controls.email.errors && teamForm.controls.email.touched">
+                    Required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputClientCompany">Phone</label>
+                  <input formControlName="phone" type="text" id="inputPhone" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="teamForm.controls.phone.errors && teamForm.controls.phone.touched">
+                    Required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputImage">Image</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input formControlName="image" type="file" class="custom-file-input" id="inputImage" required>
+                      <label class="custom-file-label" for="inputImage">Choose image</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text">Upload</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <!-- /.card-body -->
@@ -41,8 +77,8 @@
         <div class="row">
           <div class="col-12">
             <a mat-dialog-close class="btn btn-secondary">Cancel</a>
-            <input type="submit" value="Create new Task" class="btn btn-success float-right">
+            <input type="submit" value="Add New Member" class="btn btn-success float-right">
           </div>
         </div>
-    </section>
+      </form>
 

@@ -2,8 +2,8 @@
 <div mat-dialog-content>
   <section class="content-header">
     <!-- Main content -->
-    <section class="content">
-      <div class="row">
+    <form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" class="content" novalidate>
+      <div  class="row">
         <div class="col-md-6">
           <div class="card card-primary">
             <div class="card-header">
@@ -17,29 +17,57 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control">
+                <label for="projectId">Project Id</label>
+                <input formControlName="id" type="number" id="projectId" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.id.errors && projectForm.controls.id.touched">
+                  Id is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputDescription">Project Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+                <label for="projectName">Project Name</label>
+                <input  formControlName="name" type="text" id="projectName" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.name.errors && projectForm.controls.name.touched">
+                  Name is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select id="inputStatus" class="form-control custom-select">
+                <label for="projectDescription">Project Description</label>
+                <textarea formControlName="description" id="projectDescription" class="form-control" rows="4" required></textarea>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.description.errors && projectForm.controls.description.touched">
+                  Description is Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="projectStatus">Status</label>
+                <select formControlName="status" id="projectStatus" class="form-control custom-select" required>
                   <option selected disabled>Select one</option>
                   <option>On Hold</option>
                   <option>Canceled</option>
                   <option>Success</option>
                 </select>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.status.errors && projectForm.controls.status.touched">
+                  Status is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputClientCompany">Client Company</label>
-                <input type="text" id="inputClientCompany" class="form-control">
+                <label for="projectClientCompany">Client Company</label>
+                <input formControlName="clientName" type="text" id="projectClientCompany" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.clientName.errors && projectForm.controls.clientName.touched">
+                  Company is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputProjectLeader">Project Leader</label>
-                <input type="text" id="inputProjectLeader" class="form-control">
+                <label for="projectLeader">Project Leader</label>
+                <input formControlName="projectLeader" type="text" id="projectLeader" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.projectLeader.errors && projectForm.controls.projectLeader.touched">
+                  Project Leader is Required
+                </div>
               </div>
             </div>
             <!-- /.card-body -->
@@ -59,16 +87,28 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputEstimatedBudget">Estimated budget</label>
-                <input type="number" id="inputEstimatedBudget" class="form-control">
+                <label for="projectEstimatedBudget">Estimated budget</label>
+                <input formControlName="estimatedBudget" type="number" id="projectEstimatedBudget" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.estimatedBudget.errors && projectForm.controls.estimatedBudget.touched">
+                  Budget is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputSpentBudget">Total amount spent</label>
-                <input type="number" id="inputSpentBudget" class="form-control">
+                <label for="projectSpentBudget">Total amount spent</label>
+                <input formControlName="amountSpent" type="number" id="projectSpentBudget" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.amountSpent.errors && projectForm.controls.amountSpent.touched">
+                  Amount is Required
+                </div>
               </div>
               <div class="form-group">
-                <label for="inputEstimatedDuration">Estimated project duration</label>
-                <input type="number" id="inputEstimatedDuration" class="form-control">
+                <label for="projectEstimatedDuration">Estimated project duration</label>
+                <input formControlName="estimatedDuration" type="number" id="projectEstimatedDuration" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="projectForm.controls.estimatedDuration.errors && projectForm.controls.estimatedDuration.touched">
+                  Duration is Required
+                </div>
               </div>
             </div>
             <!-- /.card-body -->
@@ -79,7 +119,7 @@
       <div class="row">
         <div class="col-12">
           <a mat-dialog-close class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+          <input type="submit" value="Create new Project" class="btn btn-success float-right">
         </div>
       </div>
-  </section>
+    </form>

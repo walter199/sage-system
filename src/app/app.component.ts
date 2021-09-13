@@ -13,14 +13,19 @@ export class AppComponent implements OnInit {
   flag:boolean = true
 
   isSignedIn = false
+  isHome = true
 
   constructor(public firebaseService: FirebaseAuthService) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('user')!== null)
-    this.isSignedIn = true
-    else
-    this.isSignedIn = false
+    if(localStorage.getItem('user')!== null){
+      this.isSignedIn = true
+
+    }
+    else{
+      this.isSignedIn = false
+    }
+    
   }
 
   apply(value:string){

@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'invoice', component: InvoiceComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'clients', component: ClientsComponent},
-  {path: 'add-project', component: AddProjectComponent},
+  //{path: 'add-project', component: AddProjectComponent},
   {path: 'project-doc', component: ProjectDocComponent}
 ];
 

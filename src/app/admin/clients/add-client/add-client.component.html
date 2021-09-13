@@ -1,6 +1,73 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+
+<div mat-dialog-content>
+  <section class="content-header">
+    <!-- Main content -->
+    <form [formGroup]="clientForm" (ngSubmit)="submitClientData()" class="content">
+      <div class="row">
+        <div>
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Add New Client</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">Id</label>
+                <input formControlName="id" type="number" id="inputId" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="clientForm.controls.id.errors && clientForm.controls.id.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Company Name</label>
+                <input formControlName="name" type="text" id="inputCompanyName" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="clientForm.controls.name.errors && clientForm.controls.name.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Primary Contact</label>
+                <input formControlName="primaryContact" type="text" id="inputPrimaryContact" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="clientForm.controls.primaryContact.errors && clientForm.controls.primaryContact.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Project Name</label>
+                <input formControlName="projectName" type="text" id="inputProjectName" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="clientForm.controls.projectName.errors && clientForm.controls.projectName.touched">
+                  Required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputClientCompany">Projects</label>
+                <input formControlName="projectNumber" type="number" id="inputNumber" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="clientForm.controls.projectNumber.errors && clientForm.controls.projectNumber.touched">
+                  Required
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a mat-dialog-close class="btn btn-secondary">Cancel</a>
+          <input type="submit" value="Add New Client" class="btn btn-success float-right">
+        </div>
+      </div>
+    </form>
+
 

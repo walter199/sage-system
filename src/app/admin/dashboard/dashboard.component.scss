@@ -1,8 +1,12 @@
 @import "../../../assets/1.3.0/css/line-awesome.min.css";
 
+.back {
+  background-image: url('../../../assets/images/undraw_Dashboard_re_3b76.png');
+  background-size: contain;
+}
 
 .example-card {
-  max-width: 970px;
+  max-width: 1060px;
   max-height: 200px;
   margin-left: 20px;
   margin-top: 50px;
