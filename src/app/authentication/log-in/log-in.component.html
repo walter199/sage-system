@@ -13,7 +13,7 @@
               </div>
               <div>
                 <a class="btn btn-default submit" (click)="onSignin(email.value, password.value)">Login</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <a class="reset_pass" (click)="openDialog()">Lost your password?</a>
               </div>
 
               <div class="clearfix"></div>

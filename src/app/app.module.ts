@@ -17,6 +17,8 @@ import { CustomFormsModule } from 'ng2-validation';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +59,10 @@ import { AddMemberComponent } from './admin/team-members/add-member/add-member.c
 import { AddPaymentComponent } from './admin/finance/add-payment/add-payment.component';
 import { AddExpenseComponent } from './admin/finance/expenses/add-expense/add-expense.component';
 import { AddInvoiceComponent } from './admin/finance/invoice/add-invoice/add-invoice.component';
+import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
+import { UploadFormComponent } from './admin/projects/project-doc/upload-form/upload-form.component';
+import { UploadDetailsComponent } from './admin/projects/project-doc/upload-details/upload-details.component';
 
 @NgModule({
   declarations: [
@@ -85,12 +91,17 @@ import { AddInvoiceComponent } from './admin/finance/invoice/add-invoice/add-inv
     AddMemberComponent,
     AddPaymentComponent,
     AddExpenseComponent,
-    AddInvoiceComponent
+    AddInvoiceComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    UploadFormComponent,
+    UploadDetailsComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,
     AppRoutingModule,

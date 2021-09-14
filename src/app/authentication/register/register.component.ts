@@ -13,7 +13,11 @@ export class RegisterComponent implements OnInit {
 
   isSignedIn = false
 
-  constructor(private fb: FormBuilder,private firebaseService: FirebaseAuthService, private router: Router) { }
+  constructor(
+    public fb: FormBuilder,
+    public firebaseService: FirebaseAuthService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
     this.regForm = this.fb.group({
@@ -25,10 +29,13 @@ export class RegisterComponent implements OnInit {
       cpassword: ['',[Validators.required,Validators.pattern("[a-zA-z@_]{6,}")]]
     })
 
-    if(localStorage.getItem('user')!== null)
-    this.isSignedIn = true
-    else
-    this.isSignedIn = false
+    if(localStorage.getItem('user')!== null){
+      this.isSignedIn = true
+    }
+    else{
+      this.isSignedIn = false
+    }
+    
   }
 
   async onSignup(email: string, password: string){

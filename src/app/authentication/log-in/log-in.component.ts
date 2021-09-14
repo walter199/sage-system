@@ -2,6 +2,8 @@ import { FirebaseAuthService } from './../../services/firebase-auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'log-in',
@@ -10,10 +12,16 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LogInComponent implements OnInit {
   loginForm!: FormGroup
+  dialogRef!: MatDialogRef <any> 
 
   isSignedIn = false
 
-  constructor(private fb: FormBuilder,private firebaseService: FirebaseAuthService, private router: Router) { }
+  constructor(
+    public fb: FormBuilder,
+    public firebaseService: FirebaseAuthService,
+    public router: Router,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -21,10 +29,13 @@ export class LogInComponent implements OnInit {
       password: new FormControl('', Validators.required)
     })
 
-    if(localStorage.getItem('user')!== null)
-    this.isSignedIn = true
-    else
-    this.isSignedIn = false
+    if(localStorage.getItem('user')!== null){
+      this.isSignedIn = true
+    }
+    else{
+      this.isSignedIn = false
+    }
+    
   }
 
   async onSignin(email: string, password: string){
@@ -34,5 +45,11 @@ export class LogInComponent implements OnInit {
     
   }
   
-  
+  openDialog() {
+    this.dialogRef = this.dialog.open(ForgotPasswordComponent, {
+        height: '500px',
+        width: '1000px'
+    });
+    
+  }
 }

@@ -1,0 +1,41 @@
+<body mat-dialog-content class="login">
+  <div>
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <form>
+            <h1>Upload Document</h1>
+            <div>
+              <input type="file" class="form-control" placeholder="" (change)="selectFile($event)" required>
+            </div>
+            
+
+            <!-- Calling ForgotPassword from AuthService Api -->
+            <div>
+              <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <a mat-dialog-close class="btn btn-default submit">Cancel</a>
+            </div>
+
+            <div *ngIf="currentFileUpload" class="progress mt-2">
+              <div
+                class="progress-bar progress-bar-info"
+                role="progressbar"
+                attr.aria-valuenow="{{ percentage }}"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                [ngStyle]="{ width: percentage + '%' }"
+              >
+                {{ percentage }}%
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
