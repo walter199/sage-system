@@ -1,3 +1,5 @@
+import { ResourceService } from './services/resource.service';
+import { FileUploadService } from './services/file-upload.service';
 import { ExpenseService } from './services/expense.service';
 import { InvoiceService } from './services/invoice.service';
 import { PaymentService } from './services/payment.service';
@@ -12,6 +14,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ResizableModule } from 'angular-resizable-element';
 
 //import firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -35,9 +41,18 @@ import { TimelineComponent } from './admin/timeline/timeline.component';
 import { ClientsComponent } from './admin/clients/clients.component';
 import { MessagesComponent } from './admin/messages/messages.component';
 
+// Angular Material Imports
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTreeModule } from '@angular/material/tree';
+
+// Components imports
 import { LogInComponent } from './authentication/log-in/log-in.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { AddProjectComponent } from './admin/projects/add-project/add-project.component';
@@ -63,6 +78,11 @@ import { ForgotPasswordComponent } from './authentication/forgot-password/forgot
 import { VerifyEmailComponent } from './authentication/verify-email/verify-email.component';
 import { UploadFormComponent } from './admin/projects/project-doc/upload-form/upload-form.component';
 import { UploadDetailsComponent } from './admin/projects/project-doc/upload-details/upload-details.component';
+import { GanttComponent } from './admin/timeline/gantt/gantt.component';
+import { ChartComponent } from './admin/timeline/chart/chart.component';
+import { NotFoundComponent } from './admin/not-found/not-found.component';
+import { ResourcesComponent } from './admin/resources/resources.component';
+import { AddResourceComponent } from './admin/resources/add-resource/add-resource.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +115,12 @@ import { UploadDetailsComponent } from './admin/projects/project-doc/upload-deta
     ForgotPasswordComponent,
     VerifyEmailComponent,
     UploadFormComponent,
-    UploadDetailsComponent
+    UploadDetailsComponent,
+    GanttComponent,
+    ChartComponent,
+    NotFoundComponent,
+    ResourcesComponent,
+    AddResourceComponent
   ],
   imports: [
     BrowserModule,
@@ -105,12 +130,21 @@ import { UploadDetailsComponent } from './admin/projects/project-doc/upload-deta
     AngularFirestoreModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FlexLayoutModule,
+    HttpClientModule,
     FormsModule,
     CustomFormsModule,
     NgbModule,
     MatDialogModule,
     MatCardModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatInputModule,
+    MatSliderModule,
+    MatToolbarModule,
+    MatTreeModule,
+    ResizableModule,
     ReactiveFormsModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     CommonModule,
@@ -125,7 +159,9 @@ import { UploadDetailsComponent } from './admin/projects/project-doc/upload-deta
     ClientService,
     PaymentService,
     InvoiceService,
-    ExpenseService
+    ExpenseService,
+    FileUploadService,
+    ResourceService
   ],
   bootstrap: [AppComponent]
 })

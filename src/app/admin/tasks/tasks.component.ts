@@ -32,9 +32,9 @@ export class TasksComponent implements OnInit {
     })
   }
 
-  deleteTask(task: { $key: string; }) {
+  deleteTask(task: { title: string; }) {
     if(window.confirm('Are you sure you want to delete this task ?')) {
-      this.taskService.DeleteTask(task.$key)
+      this.taskService.DeleteTask(task.title)
     }
   }
 

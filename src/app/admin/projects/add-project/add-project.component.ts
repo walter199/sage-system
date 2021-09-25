@@ -11,7 +11,11 @@ import { Router } from '@angular/router';
 export class AddProjectComponent implements OnInit {
   public projectForm!: FormGroup
 
-  constructor(public projectService: ProjectService, public fb: FormBuilder ,private router: Router) { }
+  constructor(
+    public projectService: ProjectService, // importing Project Service
+    public fb: FormBuilder, // declaring FormBuilder for use
+    private router: Router // for routing
+  ) { }
 
 
   ngOnInit() {
@@ -19,7 +23,7 @@ export class AddProjectComponent implements OnInit {
     this.projecForm()
   }
 
-  projecForm() {
+  projecForm() { // for project validations
     this.projectForm = this.fb.group({
       id: ['', [Validators.required, Validators.minLength(2)]],
       name: ['', [Validators.required, Validators.minLength(2)]],

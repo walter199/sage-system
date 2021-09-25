@@ -26,7 +26,7 @@ export class InvoiceComponent implements OnInit {
     })
   }
 
-  deleteTask(invoice: { $key: string; }) {
+  deleteInvoice(invoice: { $key: string; }) {
     if(window.confirm('Are you sure you want to delete this task ?')) {
       this.invoiceService.DeleteInvoice(invoice.$key)
     }

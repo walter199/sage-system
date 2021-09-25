@@ -47,6 +47,7 @@
                 <th>Description</th>
                 <th>Project</th>
                 <th>Amount</th>
+                <th style="width: 20%;"></th>
               </tr>
             </thead>
             <tbody>
@@ -57,6 +58,13 @@
                 <td>{{expense.description}}</td>
                 <td>{{expense.projectName}}</td>
                 <td>{{expense.amount}}</td>
+                <td class="project-actions text-right">
+                  <a class="btn btn-danger btn-sm" (click)="deleteExpense(expense)">
+                      <i class="fas fa-trash">
+                      </i>
+                      Delete
+                  </a>
+              </td>
               </tr>
             </tbody>
           </table>

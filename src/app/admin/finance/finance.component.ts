@@ -26,7 +26,7 @@ export class FinanceComponent implements OnInit {
     })
   }
 
-  deleteTask(payment: { $key: string; }) {
+  deletePayment(payment: { $key: string; }) {
     if(window.confirm('Are you sure you want to delete this task ?')) {
       this.paymentService.DeletePayment(payment.$key)
     }

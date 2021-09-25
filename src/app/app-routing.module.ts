@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './admin/not-found/not-found.component';
 import { ProjectDocComponent } from './admin/projects/project-doc/project-doc.component';
 import { AddProjectComponent } from './admin/projects/add-project/add-project.component';
 import { ExpensesComponent } from './admin/finance/expenses/expenses.component';
@@ -17,6 +18,7 @@ import { EventsComponent } from './admin/events/events.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ResourcesComponent } from './admin/resources/resources.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -35,8 +37,10 @@ const routes: Routes = [
   {path: 'invoice', component: InvoiceComponent},
   {path: 'expenses', component: ExpensesComponent},
   {path: 'clients', component: ClientsComponent},
-  //{path: 'add-project', component: AddProjectComponent},
-  {path: 'project-doc', component: ProjectDocComponent}
+  {path: 'resources', component: ResourcesComponent},
+  {path: 'project-doc', component: ProjectDocComponent},
+  {path: '404', component: NotFoundComponent},
+  //{path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

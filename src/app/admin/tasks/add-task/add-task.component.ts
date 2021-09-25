@@ -21,6 +21,7 @@ export class AddTaskComponent implements OnInit {
 
   tasForm(){
     this.taskForm = this.fb.group({
+      id: ['', [Validators.required, Validators.minLength(1)]],
       title: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required, Validators.minLength(2)]],
       deadline: ['', [Validators.required, Validators.minLength(2)]],
@@ -28,6 +29,10 @@ export class AddTaskComponent implements OnInit {
       teamMember: ['', [Validators.required, Validators.minLength(2)]],
       status: ['', [Validators.required, Validators.minLength(2)]],
     })
+  }
+
+  get id() {
+    return this.taskForm.get('id')
   }
 
   get title() {

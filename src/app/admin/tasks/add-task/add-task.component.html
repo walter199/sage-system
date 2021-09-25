@@ -18,7 +18,11 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">ID</label>
-                <input type="number" id="inputId" class="form-control">
+                <input type="number" formControlName="id" id="inputId" class="form-control" required>
+                <!--err-->
+                <div class="text-danger" *ngIf="taskForm.controls.id.errors && taskForm.controls.id.touched">
+                  Required
+                </div>
               </div>
               <div class="form-group">
                 <label for="inputName">Title</label>

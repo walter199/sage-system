@@ -14,6 +14,7 @@ export class TaskService {
   //Create Task
   AddTask(task: Task){
     this.tasksRef.push({
+      id: task.id,
       title: task.title,
       description: task.description,
       deadline: task.deadline,
@@ -38,6 +39,7 @@ export class TaskService {
   // Update Task Object
   UpdateTask(task: Task) {
     this.taskRef.update({
+      id: task.id,
       title: task.title,
       description: task.description,
       deadline: task.deadline,
@@ -49,7 +51,7 @@ export class TaskService {
 
   // Delete Task Object
   DeleteTask(id: string) {
-    this.taskRef = this.db.object('projects/' + id)
+    this.taskRef = this.db.object('tasks/' + id)
     this.taskRef.remove()
   }
 

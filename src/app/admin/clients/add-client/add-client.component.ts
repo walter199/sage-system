@@ -1,3 +1,4 @@
+import { ProjectService } from './../../../services/project.service';
 import { ClientService } from './../../../services/client.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -9,8 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddClientComponent implements OnInit {
   public clientForm!: FormGroup
+  projects$: any
 
-  constructor(public clientService: ClientService, public fb: FormBuilder) { }
+  constructor(
+    public projectService: ProjectService,
+    public clientService: ClientService,
+    public fb: FormBuilder
+  ) { 
+    this.projects$ = projectService.GetProjectsList()
+  }
 
   ngOnInit() {
     this.clientService.GetClientsList()

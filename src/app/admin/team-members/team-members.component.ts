@@ -26,7 +26,7 @@ export class TeamMembersComponent implements OnInit {
     })
   }
 
-  deleteTask(team: { $key: string; }) {
+  deleteTeam(team: { $key: string; }) {
     if(window.confirm('Are you sure you want to delete this task ?')) {
       this.teamService.DeleteTeam(team.$key)
     }

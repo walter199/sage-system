@@ -6,14 +6,30 @@
             <form [formGroup]="loginForm">
               <h1>Login Form</h1>
               <div>
-                <input type="email" class="form-control" formControlName="email" placeholder="Email" required="" #email />
+                <input type="email" class="form-control" formControlName="email" placeholder="Email" required #email>
+                <!--err-->
+                <div class="text-danger" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched">
+                  enter valid email
+                </div>
               </div>
               <div>
-                <input type="password" class="form-control" formControlName="password" placeholder="Password" required="" #password />
+                <input type="password" class="form-control" formControlName="password" placeholder="Password" required #password>
+                <!--err-->
+                <div class="text-danger" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched">
+                  Required
+                </div>
               </div>
               <div>
                 <a class="btn btn-default submit" (click)="onSignin(email.value, password.value)">Login</a>
                 <a class="reset_pass" (click)="openDialog()">Lost your password?</a>
+              </div>
+
+              <!-- Calling GoogleAuth Api from AuthService -->
+              <div>
+                <a type="button" class="btn btn-default submit" (click)="firebaseService.GoogleAuth()">
+                  <i class="fab fa-google-plus-g"></i>
+                  Log in with Google
+                </a>
               </div>
 
               <div class="clearfix"></div>

@@ -16,6 +16,8 @@
               </div>
             </div>
             <div class="card-body">
+              
+              <!-- ID -->
               <div class="form-group">
                 <label for="inputName">Id</label>
                 <input formControlName="id" type="number" id="inputId" class="form-control" required>
@@ -24,14 +26,18 @@
                   Required
                 </div>
               </div>
+              
+              <!-- Company Name -->
               <div class="form-group">
-                <label for="inputClientCompany">Company Name</label>
-                <input formControlName="name" type="text" id="inputCompanyName" class="form-control" required>
+                <label for="inputName">Company Name</label>
+                <input formControlName="name" type="text" id="inputId" class="form-control" required>
                 <!--err-->
                 <div class="text-danger" *ngIf="clientForm.controls.name.errors && clientForm.controls.name.touched">
                   Required
                 </div>
               </div>
+
+              <!-- Primary Contact -->
               <div class="form-group">
                 <label for="inputClientCompany">Primary Contact</label>
                 <input formControlName="primaryContact" type="text" id="inputPrimaryContact" class="form-control" required>
@@ -40,14 +46,18 @@
                   Required
                 </div>
               </div>
+
+              <!-- Project Name -->
               <div class="form-group">
                 <label for="inputClientCompany">Project Name</label>
-                <input formControlName="projectName" type="text" id="inputProjectName" class="form-control" required>
+                <input formControlName="projectName" type="text" id="inputPrimaryContact" class="form-control" required>
                 <!--err-->
                 <div class="text-danger" *ngIf="clientForm.controls.projectName.errors && clientForm.controls.projectName.touched">
                   Required
                 </div>
               </div>
+
+              <!-- Projects -->
               <div class="form-group">
                 <label for="inputClientCompany">Projects</label>
                 <input formControlName="projectNumber" type="number" id="inputNumber" class="form-control" required>

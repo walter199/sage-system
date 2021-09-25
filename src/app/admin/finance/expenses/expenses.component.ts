@@ -26,7 +26,7 @@ export class ExpensesComponent implements OnInit {
     })
   }
 
-  deleteTask(expense: { $key: string; }) {
+  deleteExpense(expense: { $key: string; }) {
     if(window.confirm('Are you sure you want to delete this task ?')) {
       this.expenseService.DeleteExpense(expense.$key)
     }

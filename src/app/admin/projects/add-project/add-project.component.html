@@ -5,6 +5,8 @@
     <form [formGroup]="projectForm" (ngSubmit)="submitProjectData()" class="content" novalidate>
       <div  class="row">
         <div class="col-md-6">
+
+          <!-- card -->
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Add Project</h3>
@@ -15,7 +17,11 @@
                 </button>
               </div>
             </div>
+
+            <!-- card-body -->
             <div class="card-body">
+
+              <!-- Project id -->
               <div class="form-group">
                 <label for="projectId">Project Id</label>
                 <input formControlName="id" type="number" id="projectId" class="form-control" required>
@@ -24,6 +30,8 @@
                   Id is Required
                 </div>
               </div>
+
+              <!-- Project Name -->
               <div class="form-group">
                 <label for="projectName">Project Name</label>
                 <input  formControlName="name" type="text" id="projectName" class="form-control" required>
@@ -32,6 +40,8 @@
                   Name is Required
                 </div>
               </div>
+
+              <!-- Projeect Description -->
               <div class="form-group">
                 <label for="projectDescription">Project Description</label>
                 <textarea formControlName="description" id="projectDescription" class="form-control" rows="4" required></textarea>
@@ -40,6 +50,8 @@
                   Description is Required
                 </div>
               </div>
+
+              <!-- Status -->
               <div class="form-group">
                 <label for="projectStatus">Status</label>
                 <select formControlName="status" id="projectStatus" class="form-control custom-select" required>
@@ -53,6 +65,8 @@
                   Status is Required
                 </div>
               </div>
+
+              <!-- Client Company -->
               <div class="form-group">
                 <label for="projectClientCompany">Client Company</label>
                 <input formControlName="clientName" type="text" id="projectClientCompany" class="form-control" required>
@@ -61,6 +75,8 @@
                   Company is Required
                 </div>
               </div>
+
+              <!-- Project Leader -->
               <div class="form-group">
                 <label for="projectLeader">Project Leader</label>
                 <input formControlName="projectLeader" type="text" id="projectLeader" class="form-control" required>
@@ -75,6 +91,8 @@
           <!-- /.card -->
         </div>
         <div class="col-md-6">
+
+          <!-- card -->
           <div class="card card-secondary">
             <div class="card-header">
               <h3 class="card-title">Budget</h3>
@@ -85,7 +103,11 @@
                 </button>
               </div>
             </div>
+
+            <!-- card-body -->
             <div class="card-body">
+
+              <!-- Estimated Budget -->
               <div class="form-group">
                 <label for="projectEstimatedBudget">Estimated budget</label>
                 <input formControlName="estimatedBudget" type="number" id="projectEstimatedBudget" class="form-control" required>
@@ -94,6 +116,8 @@
                   Budget is Required
                 </div>
               </div>
+
+              <!-- Total Amount Spent -->
               <div class="form-group">
                 <label for="projectSpentBudget">Total amount spent</label>
                 <input formControlName="amountSpent" type="number" id="projectSpentBudget" class="form-control" required>
@@ -102,6 +126,8 @@
                   Amount is Required
                 </div>
               </div>
+
+              <!-- Estimated Project Duration -->
               <div class="form-group">
                 <label for="projectEstimatedDuration">Estimated project duration</label>
                 <input formControlName="estimatedDuration" type="number" id="projectEstimatedDuration" class="form-control" required>

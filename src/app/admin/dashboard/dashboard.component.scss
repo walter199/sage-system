@@ -26,8 +26,8 @@ nav {
 }
 
 .cards {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -73,6 +73,7 @@ nav {
 
 .card {
   background: #fff;
+  box-shadow: 11px 11px 48px rgba(0,0,0,0.5);
 }
 
 .card-header {

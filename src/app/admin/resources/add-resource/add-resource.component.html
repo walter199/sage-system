@@ -1,0 +1,97 @@
+
+<div mat-dialog-content>
+    <section class="content-header">
+      <!-- Main content -->
+      <form class="content" [formGroup]="resourceForm" (ngSubmit)="submitResourceData()" novalidate>
+        <div class="row">
+          <div>
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add Resource</h3>
+  
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- ID -->
+                <div class="form-group">
+                  <label for="inputName">ID</label>
+                  <input type="number" formControlName="id" id="inputId" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.id.errors && resourceForm.controls.id.touched">
+                    Required
+                  </div>
+                </div>
+
+                <!-- Names -->
+                <div class="form-group">
+                  <label for="inputName">Names</label>
+                  <input type="text" formControlName="names" id="inputTitle" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.names.errors && resourceForm.controls.names.touched">
+                    Required
+                  </div>
+                  
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                  <label for="inputDescription">Resources Description</label>
+                  <textarea  formControlName="description" id="inputDescription" class="form-control" rows="4" required></textarea>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.description.errors && resourceForm.controls.description.touched">
+                    Required
+                  </div>
+                </div>
+
+                <!-- Project -->
+                <div class="form-group">
+                  <label for="inputProjectLeader">Project</label>
+                  <input type="text" formControlName="project" id="inputProject" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.project.errors && resourceForm.controls.project.touched">
+                    Required
+                  </div>
+                </div>
+
+                <!-- Team Member -->
+                <div class="form-group">
+                  <label for="inputName">Team Member</label>
+                  <input type="text" formControlName="teamMember" id="inputMemberName" class="form-control" required>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.teamMember.errors && resourceForm.controls.teamMember.touched">
+                    Required
+                  </div>
+                </div>
+
+                <!-- Status -->
+                <div class="form-group">
+                  <label for="inputStatus">Status</label>
+                  <select formControlName="status" id="inputStatus" class="form-control custom-select" required>
+                    <option selected disabled>Select one</option>
+                    <option>Assigned</option>
+                    <option>Not Assigned</option>
+                    <option>Completed</option>
+                  </select>
+                  <!--err-->
+                  <div class="text-danger" *ngIf="resourceForm.controls.status.errors && resourceForm.controls.status.touched">
+                    Required
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a mat-dialog-close class="btn btn-secondary">Cancel</a>
+            <input type="submit" value="Create new Resource" class="btn btn-success float-right">
+          </div>
+        </div>
+      </form>
+  
